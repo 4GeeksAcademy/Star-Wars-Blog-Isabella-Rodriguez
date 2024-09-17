@@ -4,12 +4,18 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
+			<div className="container">
+			{/* Aquí puedes poner un título o logo */}
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<img src="https://logodownload.org/wp-content/uploads/2015/12/star-wars-logo-1-1.png" style={{ width: "76px", height: "38px" }}
+								/>
 			</Link>
-			<div className="ml-auto">
+					
+		
+				
+				{/* Botón alineado a la derecha */}
 				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
+					<button className="btn btn-success mt-3 mb-3 float-end">Check the Context in action</button>
 				</Link>
 			</div>
 		</nav>
