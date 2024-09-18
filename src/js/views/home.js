@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Home = () => {
@@ -17,7 +18,9 @@ export const Home = () => {
                 <p className="card-text">Gender: {characters.gender}</p>
                 <p className="card-text">Hair-color: {characters.hair_color}</p>
                 <p className="card-text">Eye-color: {characters.eye_color}</p>
+                <Link to="/demo">
                 <a href="#" className="btn btn-primary">Go somewhere</a>
+                </Link>	
               </div>
             </div>
           ))}
@@ -32,9 +35,9 @@ export const Home = () => {
               <img src="http://via.placeholder.com/400x200" className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">{planet.name}</h5>
-                <p className="card-text">Population: {planet.population}</p>
-                <p className="card-text">Terrain: {planet.terrain}</p>
+                <Link to="/demo">
                 <a href="#" className="btn btn-primary">Go somewhere</a>
+                </Link>	
               </div>
             </div>
           ))}
@@ -51,7 +54,9 @@ export const Home = () => {
                 <h5 className="card-title">{vehicle.name}</h5>
                 <p className="card-text">Model: {vehicle.model}</p>
                 <p className="card-text">Passengers: {vehicle.passengers}</p>
+                <Link to="/demo">
                 <a href="#" className="btn btn-primary">Go somewhere</a>
+                </Link>	
               </div>
             </div>
           ))}

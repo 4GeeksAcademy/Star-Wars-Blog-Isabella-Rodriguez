@@ -10,13 +10,12 @@ export const Navbar = () => {
 				<img src="https://logodownload.org/wp-content/uploads/2015/12/star-wars-logo-1-1.png" style={{ width: "76px", height: "38px" }}
 								/>
 			</Link>
-					
+			
 		
-				
 				{/* Botón alineado a la derecha */}
-				<Link to="/demo">
+			
 					<button className="btn btn-success mt-3 mb-3 float-end">Check the Context in action</button>
-				</Link>
+				
 			</div>
 		</nav>
 	);
