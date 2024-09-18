@@ -20,6 +20,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets:[
 
 			],
+			vehicles:[
+
+			],
 			favorites:[
 				
 			],
@@ -44,6 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				)	
 			},
+
 			getPlanets: () => {
 				//const store = getStore();
 				console.log("se cargo la pagina2")
@@ -52,6 +56,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then((data) => {
 						console.log(data)
 						setStore({planets: data.results})
+
+					}
+				)	
+			},
+
+			
+			getVehicles: () => {
+				//const store = getStore();
+				console.log("se cargo la pagina3")
+				fetch("https://swapi.dev/api/vehicles")
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data)
+						setStore({vehicles: data.results})
 
 					}
 				)	

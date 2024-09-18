@@ -27,14 +27,30 @@ export const Home = () => {
       <div className="container">
         <h1 className="text-danger">Planets</h1>
         <div className="card-container">
-          {store.people.map((planets, index) => (
+          {store.planets.map((planet, index) => (
             <div key={index} className="card">
               <img src="http://via.placeholder.com/400x200" className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">{planets.name}</h5>
-                <p className="card-text">Gender: {planets.population}</p>
-                <p className="card-text">Hair-color: {characters.hair_color}</p>
-                <p className="card-text">Eye-color: {characters.eye_color}</p>
+                <h5 className="card-title">{planet.name}</h5>
+                <p className="card-text">Population: {planet.population}</p>
+                <p className="card-text">Terrain: {planet.terrain}</p>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="container">
+        <h1 className="text-danger">Vehicles</h1>
+        <div className="card-container">
+          {store.vehicles.map((vehicle, index) => (
+            <div key={index} className="card">
+              <img src="http://via.placeholder.com/400x200" className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">{vehicle.name}</h5>
+                <p className="card-text">Model: {vehicle.model}</p>
+                <p className="card-text">Passengers: {vehicle.passengers}</p>
                 <a href="#" className="btn btn-primary">Go somewhere</a>
               </div>
             </div>
