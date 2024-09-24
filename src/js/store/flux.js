@@ -54,18 +54,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					})
 			},
-			añadirpersonajefavorito: (nombre, url) => {
+			añadirpersonajefavorito: (nombre) => {
 				console.log("Se añadirá a favoritos: " + nombre);
-				console.log("Se añadirá a favoritos: " + url);
 				const store = getStore();
-				const favoritosActuales = store.personajesfavoritos || [];
-				const favoritosActualizados = [...favoritosActuales, nombre];
+				if (store.personajesfavoritos.includes(nombre)){
+					setStore({...store,
+						personajesfavoritos: store.personajesfavoritos.filter(favorito => favorito !== nombre) 
+					});
+				} else {
+					setStore({
+						...getStore(),
+						personajesfavoritos: [...(getStore().personajesfavoritos || []), nombre]
+					});
+					console.log(getStore().personajesfavoritos);
+					
+				}
 				
-				setStore({
-					...store,
-					personajesfavoritos: favoritosActualizados
-				});
-				console.log(favoritosActualizados);
 			},
 			eliminarpersonajeFavorito: (nombre) => {
 				const store = getStore();
@@ -76,17 +80,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log("Favorito eliminado:", nombre);
 			},
 			añadirplanetafavorito: (nombre) => {
-				console.log("Se añadirá a favoritos: " + nombre);
 				const store = getStore();
-				const favoritosActuales = store.planetasfavoritos || [];
-				const favoritosActualizados = [...favoritosActuales, nombre];
-				
-				setStore({
-					...store,
-					planetasfavoritos: favoritosActualizados
-				});
-				console.log(favoritosActualizados);
-			},
+				console.log("Se añadirá a favoritos: " + nombre);
+				if(store.planetasfavoritos.includes(nombre)) {
+					setStore({...store,
+						planetasfavoritos: store.planetasfavoritos.filter(favorito => favorito !== nombre) 
+					});
+				} else {
+
+					setStore({
+						...getStore(),
+						planetasfavoritos: [...(getStore().planetasfavoritos || []), nombre]
+					});
+				}
+				console.log(getStore().planetasfavoritos);
+			}
+			,
 			eliminarplanetaFavorito: (nombre) => {
 				const store = getStore();
 				setStore({...store,
